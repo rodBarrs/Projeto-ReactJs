@@ -1,4 +1,4 @@
-// importar módulos
+/* importar módulos
 import React from 'react';
 import ReactDOM  from 'react-dom';
 
@@ -13,4 +13,12 @@ const estrutura =
 ReactDOM.render(
 estrutura,
 document.getElementById('root')
-);
+);*/
+
+import React from 'react';
+import ReactDOM  from 'react-dom';
+ 
+//const elemento = React.createElement('h1', {}, 'Sem JSX');
+//ReactDOM.render(elemento, document.getElementById('root'));
+
+ReactDOM.render(<h1>Com JSX</h1>, document.getElementById('root'));
