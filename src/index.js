@@ -8,12 +8,13 @@ class MeuComponente extends React.Component{
         this.state = {nome:'Rodrigo'};
     }
 
-    mensagem(){
-        alert('Hello World');
+    mensagem(nome){
+        alert('Ola ' + nome);
+        console.log(this)
     }
 
     render(){
-        return <button onClick={this.mensagem}>Clique aqui</button>;
+        return <button onClick={this.mensagem.bind(this,'Rodrigo')}>Clique aqui</button>;
     }
 
    
