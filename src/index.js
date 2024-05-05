@@ -1,18 +1,22 @@
 import React from "react";
 import ReactDOM from 'react-dom';
 
-class Componente extends React.Component{
+class MeuComponente extends React.Component{
     
     constructor(props){
         super(props);
-        this.state = {nome:'Ralf'};
+        this.state = {nome:'Rodrigo'};
+    }
+
+    mensagem(){
+        alert('Hello World');
     }
 
     render(){
-        return <h1>{this.state.nome}</h1>;
+        return <button onClick={this.mensagem}>Clique aqui</button>;
     }
 
    
 }
 
-ReactDOM.render(<Componente />, document.getElementById('root'));
+ReactDOM.render(<MeuComponente />, document.getElementById('root'));
