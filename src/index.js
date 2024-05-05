@@ -1,18 +1,18 @@
 import React from "react";
 import ReactDOM from 'react-dom';
 
-import Componente01 from "./Componente01";
-import Componente02 from "./Componente02";
 
-class Principal extends React.Component{
+
+class Componente extends React.Component{
     render(){
-        return(
+        return (
             <div>
-                <Componente01 />
-                <Componente02 />
+                <p>{this.props.informacoes.nome}</p>
+                <p>{this.props.informacoes.idade}</p>
             </div>
         );
     }
 }
 
-ReactDOM.render(<Principal/>,document.getElementById('root'));
+var dados = {nome:"Rodrigo", idade: 25};
+ReactDOM.render(<Componente informacoes={dados}/>,document.getElementById('root'));
