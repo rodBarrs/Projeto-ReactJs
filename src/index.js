@@ -2,19 +2,23 @@ import React from "react";
 import ReactDOM from 'react-dom';
 
 class MeuComponente extends React.Component{
-    
-    constructor(props){
-        super(props);
-        this.state = {nome:'Rodrigo'};
-    }
 
     mensagem(nome){
         alert('Ola ' + nome);
         console.log(this)
     }
 
+    minhaArorowFunction = (curso) =>{
+        alert('Estou fazendo o curso de ' + curso);
+    } 
+
     render(){
-        return <button onClick={this.mensagem.bind(this,'Rodrigo')}>Clique aqui</button>;
+        return(
+            <div>
+                <button onClick={this.mensagem.bind(this,'Rodrigo')}>Clique aqui</button>
+                <button onClick={() => this.minhaArorowFunction('ReactJS')}> Arrow Function </button>
+            </div>
+        );
     }
 
    
