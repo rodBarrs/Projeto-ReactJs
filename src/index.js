@@ -3,28 +3,22 @@ import ReactDOM from 'react-dom';
 
 class MeuComponente extends React.Component{
 
-    mensagem(nome){
-        alert('Ola ' + nome);
-        console.log(this)
+    constructor(props){
+        super(props);
+
+        this.state = {texto:this.props.textoInicial};
     }
 
-    minhaArorowFunction = (curso) =>{
-        alert('Estou fazendo o curso de ' + curso);
-    } 
-
-    teclado = (obj) =>{
-        console.log(obj.target.value);
+    minhaFuncao = (elemento) => {
+        this.setState({texto: elemento.target.value})
     }
+
 
     render(){
         return(
             <div>
-                <button onClick={this.mensagem.bind(this,'Rodrigo')}>Clique aqui</button>
-                <button onClick={() => this.minhaArorowFunction('ReactJS')}> Arrow Function </button>
-
-                <hr />
-                <input type='text' onChange={this.teclado} />
-
+               <h1>{this.state.texto}</h1>
+               <input type='text' onChange={this.minhaFuncao} value={this.state.texto}/>
             </div>
         );
     }
@@ -32,4 +26,4 @@ class MeuComponente extends React.Component{
    
 }
 
-ReactDOM.render(<MeuComponente />, document.getElementById('root'));
+ReactDOM.render(<MeuComponente textoInicial='Digite algo ...'/>, document.getElementById('root'));
