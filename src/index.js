@@ -1,20 +1,22 @@
 import React from "react";
 import ReactDOM from 'react-dom';
+import './estilos.css';
 
 class MeuComponente extends React.Component{
 
     render(){
 
-        let cores = ['azul', 'Amarelo', 'Vermelho'];
-
-        let listar = cores.map((cor, index) =>{
-            return <li key={index}>{index} - {cor}</li>
-        });
+       const estilo = {
+        color : 'blue',
+        borderBottom: 'solid 5px green'
+       }
+      
 
         return(
-            <ul>
-                {listar}
-            </ul>
+          <div>
+            <h1 style={{color:'red', backgroundColor:'yellow'}}>CSS interno (inline)</h1>
+            <h1 style={estilo}>CSAS atraves de variaveis e constantes</h1>
+          </div>
         );
     }
 
