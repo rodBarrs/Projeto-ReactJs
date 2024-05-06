@@ -6,19 +6,30 @@ class MeuComponente extends React.Component{
     constructor(props){
         super(props);
 
-        this.state = {texto:this.props.textoInicial};
+        this.state={exibir : false};
     }
 
-    minhaFuncao = (elemento) => {
-        this.setState({texto: elemento.target.value})
-    }
+    alterarState = () => {
 
+        let converter = !this.state.exibir;
+
+        this.setState({exibir : converter});
+
+    }
 
     render(){
+
+    let meuTexto = '';
+    if(this.state.exibir === true){
+        meuTexto = <h1>Ola!!! Utilizando condicionais</h1>
+    }else{
+        meuTexto = ''
+    }
+
         return(
             <div>
-               <h1>{this.state.texto}</h1>
-               <input type='text' onChange={this.minhaFuncao} value={this.state.texto}/>
+                {meuTexto}
+               <button onClick={this.alterarState}> Clique aqui </button>
             </div>
         );
     }
@@ -26,4 +37,4 @@ class MeuComponente extends React.Component{
    
 }
 
-ReactDOM.render(<MeuComponente textoInicial='Digite algo ...'/>, document.getElementById('root'));
+ReactDOM.render(<MeuComponente />, document.getElementById('root'));
