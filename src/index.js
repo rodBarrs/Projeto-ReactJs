@@ -1,24 +1,22 @@
 import React from "react";
 import ReactDOM from 'react-dom';
-//import './estilos.css';
+import  './estilos.css';
 
-class MeuComponente extends React.Component{
+import Formulario from './formulario';
+import Tabela from "./tabela";
 
 
-  constructor(props){
-    super(props);
 
-    this.state = {cor : 'vermelha'};
-  }
-    componentDidMount(){
-      setTimeout(() => {
-        this.setState({cor : 'azul'})
-      }, 2000);
-    }
 
+class Principal extends React.Component{
+
+ 
     render(){
         return(
-         <h1>Minha cor preferida é {this.state.cor}</h1>
+         <div>
+          <Formulario/>
+          <Tabela/>
+         </div>
         );
     }
 
@@ -26,4 +24,4 @@ class MeuComponente extends React.Component{
 }
 
 
-ReactDOM.render(<MeuComponente />, document.getElementById('root'));
+ReactDOM.render(<Principal />, document.getElementById('root'));
